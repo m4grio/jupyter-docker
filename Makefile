@@ -5,7 +5,9 @@ DOCKER_IMAGE=jupyterdocker_jupyter
 DESTDIR?=/usr/local
 prefix?=${DESTDIR}
 EXEC_FILES=\
-	bin/jupyter-notebook
+	$(JUPYTER_NOTEBOOK)
+
+JUPYTER_NOTEBOOK=bin/jupyter-notebook
 
 .PHONY: all
 all:
@@ -15,8 +17,8 @@ all:
 .PHONY: install
 install: $(prefix)/bin/jupyter-notebook
 
-$(prefix)/bin/jupyter-notebook: build $(prefix)/bin
-	install -m 0755 bin/jupyter-notebook $(prefix)/bin
+$(prefix)/$(JUPYTER_NOTEBOOK): build $(prefix)/bin
+	install -m 0755 $(JUPYTER_NOTEBOOK) $(prefix)/bin
 
 $(prefix)/bin:
 	install -d -m 0755 $(prefix)/bin
