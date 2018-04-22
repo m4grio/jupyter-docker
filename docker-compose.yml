@@ -1,0 +1,5 @@
+version: '2'
+services:
+  jupyter:
+    build: .
+    image: jupyterdocker_jupyter

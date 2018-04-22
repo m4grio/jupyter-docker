@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -u
+
+docker run \
+    --rm \
+    -it \
+    -v `pwd`:/opt/notebook \
+    -p 8888:8888 \
+    jupyterdocker_jupyter
