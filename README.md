@@ -1,4 +1,4 @@
-# My Jupyter Notebooks
+# Jupyter seen from the dock
 
 ## Scoped Languages:
 - [ ] Python 2
