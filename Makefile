@@ -13,9 +13,13 @@ all:
 	@echo "       make uninstall"
 
 .PHONY: install
-install: build
+install: $(prefix)/bin/jupyter-notebook
+
+$(prefix)/bin/jupyter-notebook: build $(prefix)/bin
+	install -m 0755 bin/jupyter-notebook $(prefix)/bin
+
+$(prefix)/bin:
 	install -d -m 0755 $(prefix)/bin
-	install -m 0755 $(EXEC_FILES) $(prefix)/bin
 
 .PHONY: uninstall
 uninstall:
